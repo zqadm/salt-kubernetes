@@ -17,6 +17,21 @@
 
 ## 2.初始化cfssl
 ```
+//添加环境变量 PATH=$PATH:$HOME/bin:/opt/kubernetes/bin
+[root@linux-node1 ssl]# cat ~/.bash_profile
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/bin:/opt/kubernetes/bin
+
+export PATH
+[root@linux-node1 ssl]# 
 [root@linux-node1 src]# mkdir ssl && cd ssl
 [root@linux-node1 ssl]# cfssl print-defaults config > config.json
 [root@linux-node1 ssl]# cfssl print-defaults csr > csr.json
